@@ -50,21 +50,22 @@ dependencies {
     implementation('com.google.code.gson:gson:2.6.2')
     implementation('com.alibaba:fastjson:1.1.46.android')
 
-    implementation(name: 'finapplet-2.36.3', ext: 'aar')
-    implementation(name: 'plugins-2.36.3', ext: 'aar')
+//插件调试
+    //implementation(name: 'finapplet-2.36.3', ext: 'aar')
+    //implementation(name: 'plugins-2.36.3', ext: 'aar')
     //implementation(name: 'map-2.36.3', ext: 'aar')
     //implementation(name: 'bluetooth-2.36.3', ext: 'aar')
     //implementation(name: 'webrtc-2.36.3', ext: 'aar')
-    implementation(name: 'sdkcore-2.16.1', ext: 'aar')
+    //implementation(name: 'sdkcore-2.16.1', ext: 'aar')
 
-    //生成aar文件配置
-//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-//    implementation 'androidx.appcompat:appcompat:1.0.0'
-//    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-//    embed (name: 'finapplet-2.36.3', ext: 'aar')
+//生成aar文件配置
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    embed (name: 'finapplet-2.36.3', ext: 'aar')
 //    embed(name: 'plugins-2.36.3', ext: 'aar')
 //    //embed(name: 'map-2.36.3', ext: 'aar')
 //    //embed(name: 'bluetooth-2.36.3', ext: 'aar')
 //    //embed(name: 'webrtc-2.36.3', ext: 'aar')
-//    embed(name: 'sdkcore-2.16.1', ext: 'aar')
+    embed(name: 'sdkcore-2.16.1', ext: 'aar')
 }
