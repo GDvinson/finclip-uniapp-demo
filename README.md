@@ -1,13 +1,12 @@
 # FinClip-Uniapp-demo
 
 #### 介绍
-FinClip SDK 凡泰Uniapp插件，利用Uniapp[插件功能](https://nativesupport.dcloud.net.cn/NativePlugin/course/android),集成FinClip SDK，实现小程序。
+FinClip SDK 凡泰Uniapp插件，利用Uniapp[插件功能](https://nativesupport.dcloud.net.cn/NativePlugin/course/android),集成FinClip SDK，实现打开小程序。
 
-<div style="display:flex;">
-    <img src="./doc/images/案例01.jpeg" width="50%" height="50%" />
-    <div style="padding: 10px;"></div>
-    <img src="./doc/images/案例02.jpeg" width="50%" height="50%" />
-</div>
+<figure class="half">
+    <img src="./doc/images/案例01.jpeg" width="150" />
+    <img src="./doc/images/案例02.jpeg" width="150" />
+</figure >
 
 #### 软件架构
 ![Alt](./doc/images/架构.png)
