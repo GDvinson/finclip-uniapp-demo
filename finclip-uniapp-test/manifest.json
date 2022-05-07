@@ -48,7 +48,7 @@
             "MopSdk" : {
                 "__plugin_info__" : {
                     "name" : "MopSdk",
-                    "description" : "插件描述信息",
+                    "description" : "FinClip小程序插件",
                     "platforms" : "Android,iOS",
                     "url" : "",
                     "android_package_name" : "",
