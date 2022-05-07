@@ -14,20 +14,20 @@ FinClip SDK 凡泰Uniapp插件，利用Uniapp[插件功能](https://nativesuppor
 #### 使用说明
 （注本项目资源使用HBuilderX 3.4.7.20220422开发，只集成了FinClip 核心SDK,如需要更多功能，可使用安卓/IOS原工程重新生成插件）
 
-1.  引入已经生成好的插件
+##### 1.  引入已经生成好的插件
 ![Alt](./doc/images/引入插件.png)
-2.  选择插件
+##### 2.  选择插件
 ![Alt](./doc/images/选择插件01.png)
 ![Alt](./doc/images/选择插件02.png)
 
-3.  生成自定度基座方便项目调试 （以安卓为例，注意包名需要和下方获取SDKKey和Secret的包名一致）
+ ##### 3.  生成自定度基座方便项目调试 （以安卓为例，注意包名需要和下方获取SDKKey和Secret的包名一致）
 
 ![Alt](./doc/images/制定自定义基座01.png)
 ![Alt](./doc/images/制定自定义基座02.png)
 ![Alt](./doc/images/制定自定义基座04.png)
 ![Alt](./doc/images/制定自定义基座03.png)
 
-4. 在Uniapp项目中初始FinClip SDK
+##### 4. 在Uniapp项目中初始FinClip SDK
 
    获取 [SDK KEY 及 SDK SECRET](https://www.finclip.com/mop/document/introduce/accessGuide/enterprise-guidelines.html#_6-%E5%85%B3%E8%81%94%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8)
 
@@ -53,7 +53,7 @@ FinClip SDK 凡泰Uniapp插件，利用Uniapp[插件功能](https://nativesuppor
     
 ```
 
-5. 在Uniapp项目中打开小程序
+##### 5. 在Uniapp项目中打开小程序
 
 ```JavaScript
 
@@ -117,7 +117,7 @@ FinClip SDK 凡泰Uniapp插件，利用Uniapp[插件功能](https://nativesuppor
 
 ```
 #### 插件API
-1、初始化API
+##### 1、初始化API
 ```JavaScript
 MopSdk.initialize({
 						'sdkKey': '22LyZEib0gLTQdU3MUauAa2CctUv+NxTLFWyPxC28y2gA4x+JWh7hhNS5aO52BFs',
@@ -236,7 +236,7 @@ MopSdk.initialize({
 						console.log('App Launch Fail', ret)
 					});
 ```
-2、小程序生命周期
+##### 2、小程序生命周期
 ```JavaScript
 MopSdk.setAppletLifecycleCallback(
 				(ret) => {
@@ -265,7 +265,7 @@ MopSdk.setAppletLifecycleCallback(
 				})	
 
 ```
-3、设置灰度发布规则
+##### 3、设置灰度发布规则
 ```JavaScript
  MopSdk.setGrayAppletVersionConfigs(
      [{
@@ -283,14 +283,14 @@ MopSdk.setAppletLifecycleCallback(
      }
  )
 ```
-4、监听右上角关闭小程序事件
+##### 4、监听右上角关闭小程序事件
 ```JavaScript
     MopSdk.setNavigationBarCloseButtonClicked((appId) => {
         console.log('setNavigationBarCloseButtonClicked',appId)
     })	
  ```
 
- 5、设置小程序button的open-type获取用户信息，一般APP登录帐号后进行设置
+ ##### 5、设置小程序button的open-type获取用户信息，一般APP登录帐号后进行设置
 ```JavaScript
   MopSdk.setUserInfo({
       usesrname: '',
@@ -302,7 +302,7 @@ MopSdk.setAppletLifecycleCallback(
   })
 
  ```
-6、设置小程序button的open-type获取用户头像
+##### 6、设置小程序button的open-type获取用户头像
 ```JavaScript
   MopSdk.setChooseAvatar((ret) => {
     console.log('onGetChooseAvatar')
@@ -311,7 +311,7 @@ MopSdk.setAppletLifecycleCallback(
   })
  ```
 
-7、设置小程序button的open-type获取用户手机号
+##### 7、设置小程序button的open-type获取用户手机号
 ```JavaScript
   MopSdk.setGetPhoneNumber((ret) => {
     console.log('onGetPhoneNumber')
@@ -324,7 +324,7 @@ MopSdk.setAppletLifecycleCallback(
   })
  ```
 
- 8、设置自定义菜单
+##### 8、设置自定义菜单
 ```JavaScript
     const items = [
         {
@@ -348,17 +348,17 @@ MopSdk.setAppletLifecycleCallback(
 
 ```
 
-9、获取当前小程序appId信息
+##### 9、获取当前小程序appId信息
 ```JavaScript
     const appId = MopSdk.currentAppletId();
 ```
 
-10、获取当前小程序信息
+##### 10、获取当前小程序信息
 ```JavaScript
     const appletInfo = MopSdk.currentApplet();
 ```
 
-11、打开小程序
+##### 11、打开小程序
 ```JavaScript
     const apiServer = 'https://api.finclip.com'
     const appId = '5eec56a41464cc0001852e9a'
@@ -374,7 +374,7 @@ MopSdk.setAppletLifecycleCallback(
                         sequence)
 
 ```
-12、二维码打开小程序
+##### 12、二维码打开小程序
 ```JavaScript
 MopSdk.openAppletByQrcode(qrcode,
             (ret) => {
@@ -387,7 +387,7 @@ MopSdk.openAppletByQrcode(qrcode,
             console.log('onProcess',ret)								  
             })
 ```
-13、搜索小程序
+##### 13、搜索小程序
 ```JavaScript
 
     MopSdk.seachApplets({
@@ -405,39 +405,39 @@ MopSdk.openAppletByQrcode(qrcode,
     })
 ```
 
- 14、关闭小程序事件,保留在内存中
+##### 14、关闭小程序事件,保留在内存中
 ```JavaScript
     MopSdk.closeApplet(appId);
  ```
 
- 15、关闭所有小程序事件,保留在内存中
+##### 15、关闭所有小程序事件,保留在内存中
 ```JavaScript
     MopSdk.closeApplets();
  ```
 
-16、结束小程序事件,从在内存中移除
+##### 16、结束小程序事件,从在内存中移除
 ```JavaScript
     MopSdk.finishRunningApplet(appId);
  ```
 
-17、结束所有小程序事件,从在内存中移除
+##### 17、结束所有小程序事件,从在内存中移除
 ```JavaScript
     MopSdk.finishRunningApplets();
 ```
 
-18、清除所有小程序缓存信息
+##### 18、清除所有小程序缓存信息
 ```JavaScript
     MopSdk.clearApplets();
 ```
 
-19、原生发送事件给小程序
+##### 19、原生发送事件给小程序
 ```JavaScript
     MopSdk.sendCustomEvent(appId, {
 
     });
 ```
 
-20、原生发送事件给所有小程序
+##### 20、原生发送事件给所有小程序
 ```JavaScript
     MopSdk.sendCustomEventToAll({
         
@@ -445,7 +445,7 @@ MopSdk.openAppletByQrcode(qrcode,
 ```
 
 
-21、原生调用webview中的js方法
+##### 21、原生调用webview中的js方法
 ```JavaScript
     MopSdk.callJS(
        // appId小程序id
@@ -470,7 +470,7 @@ MopSdk.openAppletByQrcode(qrcode,
     );
 ```
 
-22、注册自定义api
+##### 22、注册自定义api
 ```JavaScript
     MopSdk.registerExtensionApi(
        // 自定义api名移
@@ -487,7 +487,7 @@ MopSdk.openAppletByQrcode(qrcode,
     );
 ```
 
-23、注册web-view自定义api
+##### 23、注册web-view自定义api
 ```JavaScript
     MopSdk.registerWebExtentionApi(
        // 自定义api名移
