@@ -135,15 +135,15 @@ if (uni.restoreGlobal) {
       }, "\u4E8C\u7EF4\u7801\u6253\u5F00\u5C0F\u7A0B\u5E8F")
     ]);
   }
-  var PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "/Users/yangbin/work/finogeeks/newspace/finclip-uniapp-test/pages/index/index.vue"]]);
+  var PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "/Users/yangbin/work/finogeeks/newspace/finclip-uniapp-demo/finclip-uniapp-test/pages/index/index.vue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   const MopSdk = requireNativePlugin("MopSdk");
   const _sfc_main = {
     onLaunch: function() {
       formatAppLog("log", "at App.vue:6", "App Launch");
       MopSdk.initialize({
-        "sdkkey": "Ky3rXalnsZHxDy9Z6AurcmWoZE8uaSwkpFRc8QT8J8Q=",
-        "sdkSecret": "e7d38ae69c52b957",
+        "sdkKey": "22LyZEib0gLTQdU3MUauAa2CctUv+NxTLFWyPxC28y2gA4x+JWh7hhNS5aO52BFs",
+        "sdkSecret": "65146ffa924ecfdc",
         "apmServer": "https://api.finclip.com",
         uiConfig: {
           hideTransitionCloseButton: true,
@@ -155,61 +155,50 @@ if (uni.restoreGlobal) {
             capsuleWidth: 88,
             capsuleHeight: 32,
             capsuleRightMargin: 7,
-            capsuleCornerRadius: 20,
+            capsuleCornerRadius: 16,
             capsuleBorderWidth: 0.5,
-            capsuleBgLightColor: 855638016,
-            capsuleBgDarkColor: 2164260863,
-            capsuleBorderLightColor: 2164260863,
-            capsuleBorderDarkColor: 637534208,
-            capsuleDividerLightColor: 654311423,
-            capsuleDividerDarkColor: 637534208,
+            capsuleBgLightColor: "0x00000000",
+            capsuleBgDarkColor: "0x80ffffff",
+            capsuleBorderLightColor: "0x80ffffff",
+            capsuleBorderDarkColor: "0x26000000",
+            capsuleDividerLightColor: "0x26ffffff",
+            capsuleDividerDarkColor: "0x26000000",
             moreBtnWidth: 32,
             moreBtnLeftMargin: 6,
             closeBtnWidth: 32,
             closeBtnLeftMargin: 6
-          },
-          navHomeConfig: {
-            width: 44,
-            height: 32,
-            leftMargin: 7,
-            cornerRadius: 5,
-            borderWidth: 0.5,
-            borderLightColor: 2164260863,
-            borderDarkColor: 637534208,
-            bgLightColor: 855638016,
-            bgDarkColor: 2164260863
           }
         }
       }, (ret) => {
-        formatAppLog("log", "at App.vue:115", "App Launch Success", ret);
+        formatAppLog("log", "at App.vue:118", "App Launch Success", ret);
       }, (ret) => {
-        formatAppLog("log", "at App.vue:118", "App Launch Fail", ret);
+        formatAppLog("log", "at App.vue:121", "App Launch Fail", ret);
       });
       MopSdk.setAppletLifecycleCallback((ret) => {
-        formatAppLog("log", "at App.vue:123", "onInitComplete", ret);
+        formatAppLog("log", "at App.vue:126", "onInitComplete", ret);
       }, (ret) => {
-        formatAppLog("log", "at App.vue:126", "onFailure", ret);
+        formatAppLog("log", "at App.vue:129", "onFailure", ret);
       }, (ret) => {
-        formatAppLog("log", "at App.vue:129", "onCreate", ret);
+        formatAppLog("log", "at App.vue:132", "onCreate", ret);
       }, (ret) => {
-        formatAppLog("log", "at App.vue:132", "onStart", ret);
+        formatAppLog("log", "at App.vue:135", "onStart", ret);
       }, (ret) => {
-        formatAppLog("log", "at App.vue:135", "onResume", ret);
+        formatAppLog("log", "at App.vue:138", "onResume", ret);
       }, (ret) => {
-        formatAppLog("log", "at App.vue:138", "onPause", ret);
+        formatAppLog("log", "at App.vue:141", "onPause", ret);
       }, (ret) => {
-        formatAppLog("log", "at App.vue:141", "onStop", ret);
+        formatAppLog("log", "at App.vue:144", "onStop", ret);
       }, (ret) => {
-        formatAppLog("log", "at App.vue:144", "onDestroy", ret);
+        formatAppLog("log", "at App.vue:147", "onDestroy", ret);
       });
       MopSdk.registerExtensionApi("getMessage", (ret) => {
         const { uuid } = ret;
-        formatAppLog("log", "at App.vue:152", "\u5C0F\u7A0B\u5E8FappId:", MopSdk.currentAppletId());
-        formatAppLog("log", "at App.vue:154", "\u5C0F\u7A0B\u5E8F\u4FE1\u606F:", MopSdk.currentApplet());
+        formatAppLog("log", "at App.vue:155", "\u5C0F\u7A0B\u5E8FappId:", MopSdk.currentAppletId());
+        formatAppLog("log", "at App.vue:157", "\u5C0F\u7A0B\u5E8F\u4FE1\u606F:", MopSdk.currentApplet());
         MopSdk.onSuccess(uuid, { message: "\u6210\u529F\u4E86\uFF0C\u6211\u6765\u81EA\u4E8EVue" });
       });
       MopSdk.setNavigationBarCloseButtonClicked((appId) => {
-        formatAppLog("log", "at App.vue:213", "setNavigationBarCloseButtonClicked", appId);
+        formatAppLog("log", "at App.vue:216", "setNavigationBarCloseButtonClicked", appId);
         MopSdk.finishRunningApplet(appId);
       });
     },
@@ -218,7 +207,7 @@ if (uni.restoreGlobal) {
     onHide: function() {
     }
   };
-  var App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/yangbin/work/finogeeks/newspace/finclip-uniapp-test/App.vue"]]);
+  var App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/yangbin/work/finogeeks/newspace/finclip-uniapp-demo/finclip-uniapp-test/App.vue"]]);
   function createApp() {
     const app = vue.createVueApp(App);
     return {

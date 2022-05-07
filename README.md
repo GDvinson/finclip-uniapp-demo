@@ -3,11 +3,13 @@
 #### 介绍
 FinClip SDK 凡泰Uniapp插件，利用Uniapp[插件功能](https://nativesupport.dcloud.net.cn/NativePlugin/course/android),集成FinClip SDK，实现小程序。
 
+![Alt](./doc/images/案例01.jpeg) ![Alt](./doc/images/案例02.jpeg)
+
 #### 软件架构
 ![Alt](./doc/images/架构.png)
 
 #### 使用说明
-（注本插件使用HBuild 3.4.7.20220422生成，只集成了FinClip 核心SDK,如需要更多功能，可使用安卓/IOS原工程重新生成插件）
+（注本项目资源使用HBuilderX 3.4.7.20220422开发，只集成了FinClip 核心SDK,如需要更多功能，可使用安卓/IOS原工程重新生成插件）
 
 1.  引入已经生成好的插件
 ![Alt](./doc/images/引入插件.png)
@@ -15,9 +17,11 @@ FinClip SDK 凡泰Uniapp插件，利用Uniapp[插件功能](https://nativesuppor
 ![Alt](./doc/images/选择插件01.png)
 ![Alt](./doc/images/选择插件02.png)
 
-3.  生成自定度基座方便项目调试 （以安卓为例）
+3.  生成自定度基座方便项目调试 （以安卓为例，注意包名需要和下方获取SDKKey和Secret的包名一致）
+
 ![Alt](./doc/images/制定自定义基座01.png)
 ![Alt](./doc/images/制定自定义基座02.png)
+![Alt](./doc/images/制定自定义基座04.png)
 ![Alt](./doc/images/制定自定义基座03.png)
 
 4. 在Uniapp项目中初始FinClip SDK
