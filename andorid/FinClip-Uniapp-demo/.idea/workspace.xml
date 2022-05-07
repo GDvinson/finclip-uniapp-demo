@@ -14,7 +14,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af48e6bf-08e9-45e9-91d7-1e83831d8798" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../finclip-uniapp-test/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../finclip-uniapp-test/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uniplugins_mopsdk/src/main/java/com/finogeeks/uniplugins_mopsdk/MopSdkModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/uniplugins_mopsdk/src/main/java/com/finogeeks/uniplugins_mopsdk/MopSdkModule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

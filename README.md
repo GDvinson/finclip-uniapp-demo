@@ -265,39 +265,66 @@ MopSdk.setAppletLifecycleCallback(
 				})	
 
 ```
-2、打开小程序
+3、设置灰度发布规则
 ```JavaScript
-
+ MopSdk.setGrayAppletVersionConfigs(
+     [{
+       key: '',
+       value: ''
+     },{
+       key: '',
+       value: ''
+     }],
+     (ret) => {
+         console.log('success', ret)
+     },
+      (ret) => {
+         console.log('fail', ret)
+     }
+ )
 ```
-2、二维码打开小程序
-4、右上角关闭小程序事件
+4、监听右上角关闭小程序事件
 ```JavaScript
-MopSdk.setNavigationBarCloseButtonClicked((appId) => {
-				console.log('setNavigationBarCloseButtonClicked',appId)
-			})	
- ```
- 4、结束小程序事件
-```JavaScript
-MopSdk.setNavigationBarCloseButtonClicked((appId) => {
-				console.log('setNavigationBarCloseButtonClicked',appId)
-			})	
+    MopSdk.setNavigationBarCloseButtonClicked((appId) => {
+        console.log('setNavigationBarCloseButtonClicked',appId)
+    })	
  ```
 
-5、设置小程序button的open-type获取用户信息，一般APP登录帐号后进行设置
+ 5、设置小程序button的open-type获取用户信息，一般APP登录帐号后进行设置
 ```JavaScript
   MopSdk.setUserInfo({
       usesrname: '',
       gener: ''
+  },(ret) => {
+    console.log('success', ret)
+  },(ret) => {
+    console.log('fail', ret)
   })
-```
-6、设置小程序button的open-type获取手机信息，一般APP登录帐号后进行设置
-```JavaScript
-     MopSdk.setGetPhoneNumber((ret) => {
-       const { uuid } = ret
-       MopSdk.onSuccess(uuid,{phoneNumber: '13800000000'})
-    })
+
  ```
-7、设置自定义菜单
+6、设置小程序button的open-type获取用户头像
+```JavaScript
+  MopSdk.setChooseAvatar((ret) => {
+    console.log('onGetChooseAvatar')
+
+    MopSdk.onSuccess(res.uuid,{});
+  })
+ ```
+
+7、设置小程序button的open-type获取用户手机号
+```JavaScript
+  MopSdk.setGetPhoneNumber((ret) => {
+    console.log('onGetPhoneNumber')
+
+    //成功
+    MopSdk.onSuccess(res.uuid,{});
+
+    //失败
+    //MopSdk.onFail(ret.uuid,ret)
+  })
+ ```
+
+ 8、设置自定义菜单
 ```JavaScript
     const items = [
         {
@@ -311,16 +338,174 @@ MopSdk.setNavigationBarCloseButtonClicked((appId) => {
     }
     ];
     const handleClickItem = (ret) => {
-        const { uuid } = ret
-        MopSdk.onSuccess(uuid,ret)
+        //成功
+        MopSdk.onSuccess(ret.uuid,ret)
+
+        //失败
+        //MopSdk.onFail(ret.uuid,ret)
     }
 	MopSdk.setRegisteredMoreMenuItems(items,handleClickItem)
-   ```
-3、搜索小程序
-4、
-5、
 
+```
+
+9、获取当前小程序appId信息
+```JavaScript
+    const appId = MopSdk.currentAppletId();
+```
+
+10、获取当前小程序信息
+```JavaScript
+    const appletInfo = MopSdk.currentApplet();
+```
+
+11、打开小程序
+```JavaScript
+    const apiServer = 'https://api.finclip.com'
+    const appId = '5eec56a41464cc0001852e9a'
+    const startParams = null
+    // const startParams = {
+    // 	path: '/pages/index/index',
+    // 	query: 'a=1&b=2'
+    // }
+    const sequence = null // 小程序的上架序列号
+    MopSdk.openApplet(apiServer,
+                        appId,
+                        startParams,
+                        sequence)
+
+```
+12、二维码打开小程序
+```JavaScript
+MopSdk.openAppletByQrcode(qrcode,
+            (ret) => {
+                console.log('onSuccess',ret)	
+            },
+            (ret) => {
+                console.log('onFail',ret)	
+            },
+            (ret) => {
+            console.log('onProcess',ret)								  
+            })
+```
+13、搜索小程序
+```JavaScript
+
+    MopSdk.seachApplets({
+        apiServer: '',
+        text: ''
+    },
+    (ret)= > {
+        console.log('onSuccess',ret)	 
+    },
+    (ret)= > {
+          console.log('onFail',ret)	
+    },
+    (ret)= > {
+          console.log('onProcess',ret)	
+    })
+```
+
+ 14、关闭小程序事件,保留在内存中
+```JavaScript
+    MopSdk.closeApplet(appId);
+ ```
+
+ 15、关闭所有小程序事件,保留在内存中
+```JavaScript
+    MopSdk.closeApplets();
+ ```
+
+16、结束小程序事件,从在内存中移除
+```JavaScript
+    MopSdk.finishRunningApplet(appId);
+ ```
+
+17、结束所有小程序事件,从在内存中移除
+```JavaScript
+    MopSdk.finishRunningApplets();
+```
+
+18、清除所有小程序缓存信息
+```JavaScript
+    MopSdk.clearApplets();
+```
+
+19、原生发送事件给小程序
+```JavaScript
+    MopSdk.sendCustomEvent(appId, {
+
+    });
+```
+
+20、原生发送事件给所有小程序
+```JavaScript
+    MopSdk.sendCustomEventToAll({
+        
+    });
+```
+
+
+21、原生调用webview中的js方法
+```JavaScript
+    MopSdk.callJS(
+       // appId小程序id
+       appId,
+       // eventName 方法名
+       eventName,
+       //webviewId 小程序的webviewId
+       webviewId,
+       //options 参数
+       {
+
+       },
+       (ret) => {
+            console.log('success',ret)	
+       },
+       (ret) => {
+            console.log('fail',ret)	
+       },
+       (ret) => {
+            console.log('processs',ret)	
+       },
+    );
+```
+
+22、注册自定义api
+```JavaScript
+    MopSdk.registerExtensionApi(
+       // 自定义api名移
+       apiName,
+       (ret) => {
+          console.log('onCallback',ret)	
+
+            //成功
+            MopSdk.onSuccess(ret.uuid,ret)
+
+          //失败
+          //MopSdk.onFail(ret.uuid,ret)
+       }
+    );
+```
+
+23、注册web-view自定义api
+```JavaScript
+    MopSdk.registerWebExtentionApi(
+       // 自定义api名移
+       apiName,
+       (ret) => {
+          console.log('onCallback',ret)	
+
+            //成功
+            MopSdk.onSuccess(ret.uuid,ret)
+
+          //失败
+          //MopSdk.onFail(ret.uuid,ret)
+       }
+    );
+```
 #### 插件拓展
+
+
 
 #### 存在问题
 1、能实现Uniapp界面打开小程序再打开Uniapp界面？
